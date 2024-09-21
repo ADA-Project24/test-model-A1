@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+         body{
+            text-align: center;
+         }
+         button {
+            background-color: blue;
+            color: white;
+            margin: 5px;
+         }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Email Classifier</h1>
+    </header>
+    <form action="/predict" method="post">
+        <textarea placeholder="Enter Your Email here" name="email-content" id="" rows="15" cols="35">
+            {{ email_text }}
+        </textarea>
+        <div>
+            <button>Check Spam</button>
+            <a href="/">Reset</a>
+        </div>    
+    </form>
+    {% if predictions == 1%}
+       <h2 style ="color:red">SPAM</h2>
+    {% elif predictions == -1 %}
+       <h2 style ="color:blue">NOT SPAM</h2>
+    {% endif %}
+
+
+    <footer>
+        <p>&copy; 2024 Flask App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
