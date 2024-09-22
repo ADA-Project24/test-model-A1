@@ -48,3 +48,4 @@ tzdata==2024.1
     #   pandas
 werkzeug==3.0.4
     # via flask
+gunicorn
