@@ -1,0 +1,6 @@
+anyio
+arrow
+Flask==3.0.3
+pandas==2.2.3  # Adjust this if necessary
+pytz==2024.1   # Ensure this matches the version needed
+tzdata==2024.1  # Specify this version to avoid conflicts
